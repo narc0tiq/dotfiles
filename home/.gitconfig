@@ -4,7 +4,6 @@
 
 [color]
     ui = true
-    status = always
 [color "branch"]
     current = yellow reverse
     local = yellow
