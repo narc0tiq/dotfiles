@@ -52,8 +52,10 @@ autocmd Syntax python source ~/.vim/indent/python.vim
 set relativenumber
 
 set showtabline=2
-nmap <F5> <Esc>:tabp<CR>
-nmap <F6> <Esc>:tabn<CR>
+nnoremap <F5> :bp<CR>
+nnoremap <F6> :bn<CR>
+nnoremap <F7> :tabp<CR>
+nnoremap <F8> :tabn<CR>
 
 set incsearch
 set hlsearch
