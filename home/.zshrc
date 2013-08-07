@@ -79,8 +79,8 @@ alias less='less -r'
 alias df='df -T --si -xtmpfs -xusbfs'
 
 alias hs='~/.homesick/repos/homeshick/home/.homeshick'
-export homestuff="$HOME/.homesick/repos/homestuff/home"
-: ~homestuff
+export dotfiles="$HOME/.homesick/repos/dotfiles/home"
+: ~dotfiles
 
 spawn() {
     echo "#$*" >>~/spawn-out.txt
