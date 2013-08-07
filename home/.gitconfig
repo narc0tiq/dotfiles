@@ -1,0 +1,52 @@
+[user]
+    name = Octav Sandulescu
+    email = github@narc.ro
+
+[color]
+    ui = true
+    status = always
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[alias]
+    ls = ls-files
+
+    # "What did I just pull/merge?"
+    lc = log ORIG_HEAD.. --stat --no-merges
+
+    # One variant of pretty
+    lg = log --graph --pretty=tformat:'%C(bold red)%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%C(bold yellow)%d%Creset'
+    lga = !git lg --all
+
+    # Different variant of pretty
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = !git lol --all
+
+    ign = ls-files -o -i --exclude-standard
+    empty-tree-sha1 = hash-object -t tree /dev/null
+
+[core]
+    autocrlf = input
+    editor = vim
+[merge]
+    defaultToUpstream = true
+[diff]
+    renames = copies
+    mnemonicprefix = true
+[branch]
+    autosetupmerge = true
+[rerere]
+    enabled = true
+[push]
+    default = tracking
