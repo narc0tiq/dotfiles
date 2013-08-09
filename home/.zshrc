@@ -52,6 +52,7 @@ function {
     local CP_PATH='%{'${COLOR_BOLD}${COLOR_GREEN}'%}%~%{'${COLOR_NORMAL}'%}'
 
     export PROMPT=${TITLE}'['${CP_USER}'@'${CP_HOST}' '${CP_PATH}']%# '
+    export RPROMPT='< %D{%b %d %H:%M:%S}'
 }
 
 preexec () {
