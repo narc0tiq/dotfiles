@@ -1,4 +1,4 @@
-syntax on
+syntax enable
 set nocompatible
 set wildmenu
 set hidden
@@ -23,10 +23,22 @@ set cindent
 set history=500
 set ruler
 set showcmd
+set colorcolumn=100
 
-map q :q
-map <C-Up> <C-W>k
-map <C-Down> <C-W>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
+
 
 set expandtab
 set tabstop=4
@@ -51,7 +63,7 @@ autocmd Syntax python source ~/.vim/indent/python.vim
 
 set relativenumber
 
-set showtabline=2
+set showtabline=1
 nnoremap <F5> :bp<CR>
 nnoremap <F6> :bn<CR>
 nnoremap <F7> :tabp<CR>
@@ -62,8 +74,8 @@ set hlsearch
 nnoremap <C-l> :nohlsearch<CR><C-l>
 
 " Hide the search highlight in insert mode:
-autocmd InsertEnter * :setlocal nohlsearch
-autocmd InsertLeave * :setlocal hlsearch
+autocmd InsertEnter * :setlocal nohlsearch number
+autocmd InsertLeave * :setlocal hlsearch relativenumber
 
 let mapleader=','
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
@@ -80,3 +92,5 @@ try
 catch
     colo default
 endtry
+
+let g:miniBufExplBuffersNeeded = 1
