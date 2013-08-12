@@ -24,6 +24,7 @@ set history=500
 set ruler
 set showcmd
 set colorcolumn=100
+set matchtime=0
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -94,3 +95,5 @@ catch
 endtry
 
 let g:miniBufExplBuffersNeeded = 1
+let g:syntastic_enable_signs = 0
+let g:syntastic_always_populate_loc_list = 1
