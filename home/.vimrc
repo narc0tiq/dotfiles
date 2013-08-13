@@ -75,7 +75,8 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
-nmap <silent> <leader>s :set spell!<cr>
+nnoremap <leader>s :set spell!<cr>
+nnoremap <leader>n :set hlsearch!<cr>
 set spelllang=en_us
 
 try
@@ -87,3 +88,5 @@ endtry
 let g:miniBufExplBuffersNeeded = 1
 let g:syntastic_enable_signs = 0
 let g:syntastic_always_populate_loc_list = 1
+
+set virtualedit=all
