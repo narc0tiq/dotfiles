@@ -79,6 +79,8 @@ alias diff='diff -u'
 alias less='less -r'
 alias df='df -T --si -xtmpfs -xusbfs'
 
+alias mcpc='(PROJ=${PWD##*/} && cd ../.. && python runtime/recompile_mods.py ${PROJ})'
+
 alias hs='~/.homesick/repos/homeshick/home/.homeshick'
 export dotfiles="$HOME/.homesick/repos/dotfiles/home"
 : ~dotfiles
