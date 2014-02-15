@@ -81,7 +81,6 @@ alias df='df -T --si -xtmpfs -xusbfs'
 
 alias mcpc='(PROJ=${PWD##*/} && cd ../.. && python runtime/recompile_mods.py ${PROJ})'
 
-alias hs='~/.homesick/repos/homeshick/home/.homeshick'
 export dotfiles="$HOME/.homesick/repos/dotfiles/home"
 : ~dotfiles
 
@@ -97,6 +96,10 @@ if [ -x ~/bin ]; then
 fi
 if [ -x ~/python ]; then
     export PYTHONPATH="$HOME/python:$PYTHONPATH"
+fi
+if [ -x ~/.homesick ]; then
+    source ~/.homesick/repos/homeshick/homeshick.sh
+    alias hs='homeshick'
 fi
 
 if [[ -r ~/.zshrc.local ]]; then
