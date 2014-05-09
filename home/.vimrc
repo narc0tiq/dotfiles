@@ -26,6 +26,9 @@ set showcmd
 set colorcolumn=100
 set matchtime=0
 
+set cursorline
+set scrolloff=5
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -70,10 +73,9 @@ autocmd InsertLeave * :setlocal hlsearch relativenumber
 
 let mapleader=','
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
+nnoremap <leader>ew :edit %%
+nnoremap <leader>ev :edit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 nnoremap <leader>s :set spell!<cr>
 nnoremap <leader>n :set hlsearch!<cr>
