@@ -1,5 +1,5 @@
 # This is a sample .zshrc.local
-# If I don't have this, I'll forget what incantations *actionally work*.
+# If I don't have this, I'll forget what incantations *actually work*.
 
 alias apt-fast='sudo aptitude -o dir::cache::archives=/mnt/var/cache/apt/archives'
 
