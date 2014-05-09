@@ -1,0 +1,155 @@
+# set to yes if you want Conky to be forked in the background
+background no
+
+# Use Xft?
+use_xft yes
+
+# Xft font when Xft is enabled
+xftfont Sans:size=7
+
+# Text alpha when using Xft
+xftalpha 1
+
+# Update interval in seconds
+update_interval 0.99
+update_interval_on_battery 9.99
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+#own_window yes
+own_window_transparent yes
+#own_window_type override
+own_window_type desktop
+#own_window_type normal #use this if you want a nice shadow to appear around conky
+
+# If own_window is yes, these window manager hints may be used
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 200 20
+
+# Maximum width
+maximum_width 200
+
+# Draw shades?
+draw_shades yes
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Draw borders around graphs
+draw_graph_borders yes
+
+# Stippled borders?
+# stippled_borders 8
+
+# border margins
+# border_margin 2
+
+# border width
+# border_width 1
+
+# Default colors and also border colors
+default_color white
+default_shade_color black
+default_outline_color white
+
+# Text alignment, other possible values are commented
+#alignment top_left
+#alignment top_right
+#alignment bottom_left
+alignment bottom_right
+#alignment none
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 2
+gap_y 32
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 5
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# How strict should $if_up be?
+#if_up_strictness up
+if_up_strictness link
+#if_up_strictness address
+
+top_name_width 20
+
+short_units yes
+show_graph_range yes
+show_graph_scale yes
+
+color0 e3e300
+color1 00e3e3
+color2 00e379
+color3 00e3e3
+color4 00e379
+
+color9 00e3e3
+
+template0 ${if_up \2}\1:${alignr}TX: $color0${upspeedf \2}$color  RX: ${color0}${downspeedf \2}$color (kB/s)\n$alignr$color9${offset -6}${upspeedgraph \2 30,91 008800 00ff00 log}${offset 4}${downspeedgraph \2 30,91 008800 00ff00 log}$color\n${endif}
+template1 ${if_mounted \1}Mt. $color0}\1$color:$alignr${color0}${fs_used \1} $color/ $color0${fs_size \1}\n${fs_used_perc \1}% $color9${fs_bar \1}$color\n${endif}
+template2 $color\3${\1 name \3}$alignr${\1 \2 \3}%
+template3 TOP \1:\n${template2 \2 \3 1}\n${template2 \2 \3 2}\n${template2 \2 \3 3}\n${template2 \2 \3 4}\n$color
+template4 ${if_up \2}IPv4 \1:${alignr}$color0${addr \2}$color (\2)\n${endif}
+
+##############################################
+##############################################
+
+TEXT
+$alignr${color e3e300}${pre_exec lsb_release -sd} $color(${color e3e300}${pre_exec lsb_release -sc}$color)
+System:$alignr${color e3e300}Linux$color, ${color e3e300}$nodename$color,
+$alignr${color e3e300}$kernel$color on ${color e3e300}$machine$color
+\
+Battery:$alignr$color0${battery}${color}${if_empty $battery_time}${else}, ETA: $color0${battery_time}$color${endif}
+$color9${battery_bar}$color
+\
+${template4 LAN eth0}\
+${template4 WLAN wlan0}\
+${template4 PPPoE ppp0}\
+\
+Uptime:$alignr$color0$uptime$color
+\
+Load avg:$alignr$color0${loadavg 1}$color, $color0${loadavg 2}$color, $color0${loadavg 3}$color
+$color9${cpugraph cpu1 30,99 008800 00ff00 log}$alignr${cpugraph cpu2 30,99 008800 00ff00 log}$color${voffset -4}
+CPU1: $color0$alignr${cpu cpu1}% $color9${cpubar cpu1 5,101}  $color0${freq_g 1} GHz$color
+CPU2: $color0$alignr${cpu cpu2}% $color9${cpubar cpu2 5,101}  $color0${freq_g 2} GHz$color
+
+RAM:$alignr$color0$mem $color/ $color0$memmax
+${memperc}%  $color9${membar}$color
+Swap:$alignr$color0$swap $color/ $color0$swapmax
+${swapperc}%  $color9${swapbar}$color
+
+${template1 /}\
+${template1 /home}\
+${template1 /media/disk}\
+
+${template0 LAN eth0}\
+${template0 WLAN wlan0}\
+${template0 PPPoE ppp0}\
+
+${voffset -4}\
+${template3 CPU top cpu}
+${template3 RAM top_mem mem}
+${template3 I/O top_io io_perc}
+
+$alignr-- Reported by Conky v$color0$conky_version$color at $color9${time %H:%M:%S}$color
