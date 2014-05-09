@@ -1,0 +1,5 @@
+#!/bin/sh -xe
+
+for i in $*; do
+    git fetch origin +refs/pull/$i/head:refs/remotes/origin/pr/$i/head
+done
