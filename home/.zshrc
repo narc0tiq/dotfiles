@@ -29,6 +29,7 @@ export SCREEN_TITLE_END=$'\e\\'
 export XTERM_TITLE_START=$'\e]2;'
 export XTERM_TITLE_END=$'\a'
 
+
 # Anonymous function so the "local"s are actually local
 function {
     local COLOR_BOLD=`tput bold 2>/dev/null`
@@ -51,8 +52,12 @@ function {
     local CP_HOST='%{'${COLOR_BOLD}${COLOR_RED}'%}%m%{'${COLOR_NORMAL}'%}'
     local CP_PATH='%{'${COLOR_BOLD}${COLOR_GREEN}'%}%~%{'${COLOR_NORMAL}'%}'
 
-    export PROMPT=${TITLE}'['${CP_USER}'@'${CP_HOST}' '${CP_PATH}']%# '
+    export PROMPT='['${CP_USER}'@'${CP_HOST}' '${CP_PATH}']%# '
     export RPROMPT='< %D{%b %d %H:%M:%S}'
+
+    if [[ $IGNORE_TITLE != "true" ]]; then
+        export PROMPT="${TITLE}${PROMPT}"
+    fi
 }
 
 preexec () {
