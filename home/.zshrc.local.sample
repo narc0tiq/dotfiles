@@ -1,0 +1,11 @@
+# This is a sample .zshrc.local
+# If I don't have this, I'll forget what incantations *actionally work*.
+
+alias apt-fast='sudo aptitude -o dir::cache::archives=/mnt/var/cache/apt/archives'
+
+if [[ "$TERM" == putty* ]]; then
+    byobu attach-session -t putty || byobu new-session -s putty
+elif [[ "$TERM" != screen* && "$DESKTOP_SESSION" == *ubuntu ]]; then
+    byobu attach-session -t local || byobu new-session -s local
+fi
+
