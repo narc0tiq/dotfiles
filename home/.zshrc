@@ -74,7 +74,7 @@ preexec () {
 
 export ACK_OPTIONS='--ignore-dir=venv'
 
-alias ls='ls --color'
+alias ls='ls --color=auto -p'
 alias ll='ls -l'
 alias l.='ls -a'
 alias ll.='ls -la'
@@ -110,4 +110,6 @@ fi
 if [[ -r ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
+
+fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 
