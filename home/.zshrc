@@ -20,6 +20,9 @@ unsetopt beep list_ambiguous bang_hist flow_control
 bindkey -e
 # End of auto-configured original stuff.
 
+# Exclamation points are not my friend!
+set +H
+
 # Flow control is bad and you should feel bad.
 stty -ixon
 
