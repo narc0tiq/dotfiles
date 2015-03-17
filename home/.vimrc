@@ -91,5 +91,7 @@ let g:syntastic_enable_signs = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_java_javac_config_file_enabled = 1
 
+let g:airline#extensions#tabline#enabled=1
+
 set virtualedit=all
 set mouse=n
