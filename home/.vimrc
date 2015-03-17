@@ -73,7 +73,7 @@ autocmd InsertLeave * :setlocal hlsearch
 
 let mapleader=','
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-nnoremap <leader>ew :edit %%
+nmap <leader>ew :edit %%
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
