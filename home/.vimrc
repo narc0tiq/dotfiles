@@ -61,8 +61,7 @@ set relativenumber
 set showtabline=1
 nnoremap <F5> :bp<CR>
 nnoremap <F6> :bn<CR>
-nnoremap <F7> :tabp<CR>
-nnoremap <F8> :tabn<CR>
+nnoremap <F8> :TagbarToggle<CR>
 
 set incsearch
 set hlsearch
