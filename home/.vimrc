@@ -65,7 +65,6 @@ nnoremap <F8> :TagbarToggle<CR>
 
 set incsearch
 set hlsearch
-nnoremap <C-l> :nohlsearch<CR><C-l>
 
 " Hide the search highlight in insert mode:
 autocmd InsertEnter * :setlocal nohlsearch
