@@ -55,6 +55,7 @@ let python_highlight_all = 1
 autocmd! Syntax python source ~/.vim/syntax/python.vim
 autocmd Syntax python source ~/.vim/indent/python.vim
 
+set number
 set relativenumber
 
 set showtabline=1
@@ -68,8 +69,8 @@ set hlsearch
 nnoremap <C-l> :nohlsearch<CR><C-l>
 
 " Hide the search highlight in insert mode:
-autocmd InsertEnter * :setlocal nohlsearch number
-autocmd InsertLeave * :setlocal hlsearch relativenumber
+autocmd InsertEnter * :setlocal nohlsearch
+autocmd InsertLeave * :setlocal hlsearch
 
 let mapleader=','
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
