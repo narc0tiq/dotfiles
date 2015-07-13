@@ -96,3 +96,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 set virtualedit=all
 set mouse=n
+
+set undofile
+set undodir=~/.vim/undo
+set undolevels=1000
+set undoreload=10000
