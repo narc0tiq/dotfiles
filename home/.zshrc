@@ -77,7 +77,7 @@ preexec () {
 
 export ACK_OPTIONS='--ignore-dir=venv'
 
-alias ls='ls --color=auto -p'
+alias ls='ls --color=auto -pF'
 alias ll='ls -l'
 alias l.='ls -a'
 alias ll.='ls -la'
