@@ -26,6 +26,9 @@ set +H
 # Flow control is bad and you should feel bad.
 stty -ixon
 
+# GPG needs to know wtf our TTY is
+export GPG_TTY=$(tty)
+
 # Useful ANSI bits:
 export SCREEN_TITLE_START=$'\ek'
 export SCREEN_TITLE_END=$'\e\\'
