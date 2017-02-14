@@ -96,7 +96,7 @@ let g:syntastic_java_javac_config_file_enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-set virtualedit=all
+set virtualedit=block
 set mouse=n
 
 set undofile
