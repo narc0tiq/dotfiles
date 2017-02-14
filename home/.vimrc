@@ -62,6 +62,7 @@ set showtabline=1
 nnoremap <F5> :bp<CR>
 nnoremap <F6> :bn<CR>
 nnoremap <F8> :TagbarToggle<CR>
+nnoremap <F9> :AirlineToggle<CR>
 
 set incsearch
 set hlsearch
