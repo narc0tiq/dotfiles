@@ -28,6 +28,11 @@ stty -ixon
 
 # GPG needs to know wtf our TTY is
 export GPG_TTY=$(tty)
+# ...and the agent started manually. Because why not.
+if [[ -x /usr/bin/gpg-agent ]]; then
+    eval $(gpg-agent --daemon)
+fi
+
 
 # Useful ANSI bits:
 export SCREEN_TITLE_START=$'\ek'
