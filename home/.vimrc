@@ -71,13 +71,15 @@ autocmd InsertEnter * :setlocal nohlsearch
 autocmd InsertLeave * :setlocal hlsearch
 
 let mapleader=','
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
 nmap <leader>ew :edit %%
-nnoremap <leader>ev :edit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>ev :edit $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
-nnoremap <leader>s :set spell!<cr>
-nnoremap <leader>n :set hlsearch!<cr>
+nnoremap <leader>s :set spell!<CR>
+nnoremap <leader>n :set hlsearch!<CR>
+nnoremap <leader>v :set paste!<CR>
+
 set spelllang=en_us
 
 try
