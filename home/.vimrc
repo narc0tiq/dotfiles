@@ -81,6 +81,9 @@ nnoremap <leader>s :set spell!<CR>
 nnoremap <leader>n :set hlsearch!<CR>
 nnoremap <leader>v :set paste!<CR>
 
+" Search for lines _not_ terminated with a ^M (mixed-mode DOS files detected
+" as Unix). Capture the match, so you can follow up with :s//\1/
+nnoremap <leader><C-m> /\([^]\)$<CR>
 set spelllang=en_us
 
 try
