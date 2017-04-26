@@ -41,8 +41,7 @@ export XTERM_TITLE_START=$'\e]2;'
 export XTERM_TITLE_END=$'\a'
 
 
-# Anonymous function so the "local"s are actually local
-function {
+function custom_prompt () {
     local COLOR_BOLD=`tput bold 2>/dev/null`
     local COLOR_RED=`tput setaf 1 2>/dev/null`
     local COLOR_GREEN=`tput setaf 2 2>/dev/null`
@@ -63,13 +62,19 @@ function {
     local CP_HOST='%{'${COLOR_BOLD}${COLOR_RED}'%}%m%{'${COLOR_NORMAL}'%}'
     local CP_PATH='%{'${COLOR_BOLD}${COLOR_GREEN}'%}%~%{'${COLOR_NORMAL}'%}'
 
-    export PROMPT='['${CP_USER}'@'${CP_HOST}' '${CP_PATH}']%# '
+    if [[ -z $1 ]]; then
+        export PROMPT='['${CP_USER}'@'${CP_HOST}' '${CP_PATH}']%# '
+    else
+        export PROMPT='['$1']''['${CP_USER}'@'${CP_HOST}' '${CP_PATH}']%# '
+    fi
+
     export RPROMPT='< %D{%b %d %H:%M:%S}'
 
     if [[ $IGNORE_TITLE != "true" ]]; then
         export PROMPT="${TITLE}${PROMPT}"
     fi
 }
+custom_prompt
 
 preexec () {
     local ex_time=' \e[A\e[2000C\e[26D Executed: '${(%):-'%D{%b %d %H:%M:%S}'}
