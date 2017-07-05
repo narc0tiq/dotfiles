@@ -60,8 +60,8 @@ function custom_prompt () {
     screen*)
         local TITLE='%{'${SCREEN_TITLE_START}'%~'${SCREEN_TITLE_END}'%}'
         ;;
-    xterm*|cygwin)
-        local TITLE='%{'${XTERM_TITLE_START}'%~'${XTERM_TITLE_END}'%}'
+    xterm*|cygwin*|putty*)
+        local TITLE='%{'${XTERM_TITLE_START}'%n@%m:%~'${XTERM_TITLE_END}'%}'
         ;;
     esac
 
@@ -89,8 +89,8 @@ preexec () {
     screen*)
         echo -e "${SCREEN_TITLE_START}${1}${SCREEN_TITLE_END}${ex_time}"
         ;;
-    xterm*|cygwin)
-        echo -e "${XTERM_TITLE_START}[${USER}@${HOST}] - ${1}${XTERM_TITLE_END}${ex_time}"
+    xterm*|cygwin*|putty*)
+        echo -e "${XTERM_TITLE_START}${USER}@${HOST} - ${1}${XTERM_TITLE_END}${ex_time}"
         ;;
     esac
 }
