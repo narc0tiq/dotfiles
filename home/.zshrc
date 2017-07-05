@@ -122,6 +122,10 @@ if [ -x ~/bin ]; then
     typeset -U path
     path=(~/bin $path)
 fi
+if [ -x ~/go/bin ]; then
+    typeset -U path
+    path=(~/go/bin $path)
+fi
 if [ -x ~/python ]; then
     export PYTHONPATH="$HOME/python:$PYTHONPATH"
 fi
