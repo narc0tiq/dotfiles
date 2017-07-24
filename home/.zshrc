@@ -95,6 +95,7 @@ preexec () {
     esac
 }
 
+export GPG_TTY=$(tty)
 export ACK_OPTIONS='--ignore-dir=venv'
 
 alias ls='ls --color=auto -pF'
