@@ -1,7 +1,7 @@
 [user]
     name = Octav Sandulescu
     email = github@narc.ro
-	signingkey = A7B7210C
+	signingkey = 8795B1FBA7B7210C
 
 [color]
     ui = true
