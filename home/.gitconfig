@@ -1,7 +1,7 @@
 [user]
     name = Octav Sandulescu
     email = github@narc.ro
-	signingkey = 8795B1FBA7B7210C
+    signingkey = 8795B1FBA7B7210C
 
 [color]
     ui = true
@@ -51,6 +51,6 @@
 [push]
     default = tracking
 [gpg]
-	program = gpg2
+    program = gpg2
 [commit]
-	gpgsign = true
+    gpgsign = true
