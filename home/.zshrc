@@ -110,8 +110,7 @@ alias df='df -T --si -xtmpfs -xusbfs'
 
 alias mcpc='(PROJ=${PWD##*/} && cd ../.. && python runtime/recompile_mods.py ${PROJ})'
 
-export dotfiles="$HOME/.homesick/repos/dotfiles/home"
-: ~dotfiles
+hash -d dotfiles="$HOME/.homesick/repos/dotfiles/home"
 
 spawn() {
     echo "#$*" >>~/spawn-out.txt
